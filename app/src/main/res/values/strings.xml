@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Submission3</string>
+
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="repository">Repository</string>
+    <string name="location">Location</string>
+    <string name="change_language">Change Language</string>
+    <string name="company">Company</string>
+    <string name="favorite">Favorite</string>
+    <string name="change_notification_settings">Notification Setting</string>
+    <string name="setting_reminder">Setting Reminder</string>
+    <string name="reminder_daily">Reminder (Daily)</string>
+    <string name="notif_message">Find your favorite GitHub users</string>
+    <string name="delete_from_favorite">Deleted from favorite</string>
+    <string name="add_to_favorite">Added to favorite</string>
+    <string name="empty_favorite">Your Favorite is empty</string>
+</resources>
