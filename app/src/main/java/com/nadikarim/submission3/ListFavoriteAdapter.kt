@@ -10,9 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.nadikarim.submission3.data.model.Favorite
 import com.nadikarim.submission3.databinding.ItemUserBinding
-import com.nadikarim.submission3.utils.CustomOnItemClickListener
-import com.nadikarim.submission3.utils.EXTRA_NOTE
-import com.nadikarim.submission3.utils.EXTRA_POSITION
+import com.nadikarim.submission3.utils.*
 import java.util.ArrayList
 
 class ListFavoriteAdapter(private val activity: Activity) : RecyclerView.Adapter<ListFavoriteAdapter.ListViewHolder>() {
@@ -57,9 +55,9 @@ class ListFavoriteAdapter(private val activity: Activity) : RecyclerView.Adapter
                     CustomOnItemClickListener(
                         adapterPosition, object : CustomOnItemClickListener.OnItemClickCallback {
                             override fun onItemClicked(view: View, position: Int) {
-                                val intent = Intent(context, DetailActivity::class.java)
-                                intent.putExtra(EXTRA_POSITION, position)
+                                val intent = Intent(context, DetailFavoriteActivity::class.java)
                                 intent.putExtra(EXTRA_NOTE, favorite)
+                                intent.putExtra(EXTRA_FAVORITE, favorite)
                                 context.startActivity(intent)
                             }
                         }

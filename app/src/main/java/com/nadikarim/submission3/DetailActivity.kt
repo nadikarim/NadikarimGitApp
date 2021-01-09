@@ -2,8 +2,10 @@ package com.nadikarim.submission3
 
 import android.content.ContentValues
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
@@ -32,6 +34,7 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     private var isFavorite = false
     private lateinit var favoriteHelper: FavoriteHelper
     private lateinit var imageAvatar: String
+    private lateinit var uriWithId: Uri
 
     companion object {
         const val EXTRA_DATA = "extra_data"
@@ -126,7 +129,9 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         if (v.id == R.id.btn_favorite) {
             if (isFavorite) {
-                favoriteHelper.deleteById(favorite?.username.toString())
+                uriWithId = Uri.parse(CONTENT_URI.toString() + "/" + favorite?.username)
+                //favoriteHelper.deleteById(favorite?.username.toString())
+                contentResolver.delete(uriWithId, null, null)
                 Toast.makeText(this, getString(R.string.delete_from_favorite), Toast.LENGTH_SHORT).show()
                 binding.btnFavorite.setImageResource(R.drawable.ic_baseline_favorite_unfilled_24)
                 isFavorite = false
