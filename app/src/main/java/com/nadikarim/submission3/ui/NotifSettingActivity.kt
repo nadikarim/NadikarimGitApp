@@ -1,18 +1,21 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.ui
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import com.nadikarim.submission3.service.AlarmReceiver
+import com.nadikarim.submission3.R
 import com.nadikarim.submission3.databinding.ActivityNotifSettingBinding
+import com.nadikarim.submission3.utils.PREFS_NAME
+import com.nadikarim.submission3.utils.TYPE_DAILY
 
 class NotifSettingActivity : AppCompatActivity() {
     private lateinit var alarmReceiver: AlarmReceiver
     private lateinit var mSharedPreferences: SharedPreferences
 
     companion object {
-        const val PREFS_NAME = "SettingPrefs"
         private const val DAILY = "daily"
     }
 
@@ -32,7 +35,7 @@ class NotifSettingActivity : AppCompatActivity() {
             if (isChecked) {
                 alarmReceiver.setDailyReminder(
                     this,
-                    AlarmReceiver.TYPE_DAILY,
+                        TYPE_DAILY,
                     getString(R.string.notif_message)
                 )
             } else {

@@ -1,7 +1,6 @@
-package com.nadikarim.submission3
+package com.nadikarim.consumerapp.ui
 
 import android.os.Bundle
-import android.service.autofill.UserData
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,10 +10,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
-import com.nadikarim.submission3.data.model.Favorite
-import com.nadikarim.submission3.data.model.User
-import com.nadikarim.submission3.databinding.FragmentFollowingBinding
-import com.nadikarim.submission3.utils.*
+import com.nadikarim.consumerapp.data.model.Favorite
+import com.nadikarim.consumerapp.data.model.User
+import com.nadikarim.consumerapp.databinding.FragmentFollowingBinding
+import com.nadikarim.consumerapp.utils.*
 import cz.msebera.android.httpclient.Header
 import org.json.JSONArray
 import org.json.JSONObject
@@ -23,7 +22,6 @@ class FollowingFragment : Fragment() {
 
     companion object {
         private val TAG = FollowingFragment::class.java.simpleName
-        const val EXTRA_DATA = "extra_data"
     }
 
     private var _binding: FragmentFollowingBinding? = null

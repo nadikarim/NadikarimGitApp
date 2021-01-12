@@ -1,16 +1,16 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.submission3.data
 
 import android.database.Cursor
-import com.nadikarim.consumerapp.data.model.Favorite
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.AVATAR
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.COMPANY
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.FAVORITE
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.FOLLOWER
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.FOLLOWING
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.LOCATION
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.NAME
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.REPOSITORY
-import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.USERNAME
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.AVATAR
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.COMPANY
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.FAVORITE
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.FOLLOWER
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.FOLLOWING
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.LOCATION
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.NAME
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.REPOSITORY
+import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.USERNAME
+import com.nadikarim.submission3.data.model.Favorite
 import java.util.ArrayList
 
 object MappingHelper {

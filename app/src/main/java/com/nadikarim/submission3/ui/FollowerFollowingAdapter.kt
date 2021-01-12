@@ -1,11 +1,12 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.submission3.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.nadikarim.consumerapp.data.model.User
-import com.nadikarim.consumerapp.databinding.ItemUserBinding
+import com.nadikarim.submission3.R
+import com.nadikarim.submission3.data.model.User
+import com.nadikarim.submission3.databinding.ItemUserBinding
 
 class FollowerFollowingAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<FollowerFollowingAdapter.UserViewHolder>(){
 

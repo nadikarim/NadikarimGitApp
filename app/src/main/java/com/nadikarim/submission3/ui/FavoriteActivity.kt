@@ -1,4 +1,4 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.ui
 
 import android.database.ContentObserver
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,8 @@ import android.os.HandlerThread
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nadikarim.submission3.data.MappingHelper
+import com.nadikarim.submission3.R
 import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.CONTENT_URI
 import com.nadikarim.submission3.data.model.Favorite
 import com.nadikarim.submission3.databinding.ActivityFavoriteBinding

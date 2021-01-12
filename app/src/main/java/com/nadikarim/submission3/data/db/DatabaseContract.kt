@@ -2,11 +2,12 @@ package com.nadikarim.submission3.data.db
 
 import android.net.Uri
 import android.provider.BaseColumns
+import com.nadikarim.submission3.utils.AUTHORITY
+import com.nadikarim.submission3.utils.SCHEME
 
 object DatabaseContract {
 
-    const val AUTHORITY = "com.nadikarim.submission3"
-    const val SCHEME = "content"
+
 
     class FavoriteColumns : BaseColumns {
         companion object {

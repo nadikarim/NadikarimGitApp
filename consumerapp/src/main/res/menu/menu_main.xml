@@ -7,11 +7,6 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_favorite"
-        android:title="@string/favorite"
-        app:showAsAction="never"/>
-    <item
-
         android:id="@+id/action_change_notification"
         android:title="@string/change_notification_settings"
         app:showAsAction="never"/>

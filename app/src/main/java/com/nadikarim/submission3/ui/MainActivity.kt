@@ -1,4 +1,4 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,12 +8,12 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
+import com.nadikarim.submission3.*
 import com.nadikarim.submission3.data.model.User
 import com.nadikarim.submission3.databinding.ActivityMainBinding
 import com.nadikarim.submission3.utils.*

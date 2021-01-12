@@ -1,4 +1,4 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.consumerapp.service
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
@@ -10,6 +10,8 @@ import android.content.Intent
 import android.os.Build
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import com.nadikarim.consumerapp.ui.MainActivity
+import com.nadikarim.consumerapp.R
 import java.util.*
 
 class AlarmReceiver : BroadcastReceiver() {

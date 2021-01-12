@@ -1,4 +1,4 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.nadikarim.submission3.R
 import com.nadikarim.submission3.data.model.Favorite
 import com.nadikarim.submission3.databinding.ItemUserBinding
 import com.nadikarim.submission3.utils.*
 import java.util.ArrayList
 
-class ListFavoriteAdapter(private val activity: Activity) : RecyclerView.Adapter<ListFavoriteAdapter.ListViewHolder>() {
+class ListFavoriteAdapter(private var listUserFavorite: ArrayList<Favorite>) : RecyclerView.Adapter<ListFavoriteAdapter.ListViewHolder>() {
     var listFavorite = ArrayList<Favorite>()
         set(listFavorite) {
             if (listFavorite.size > 0) {
@@ -59,6 +60,7 @@ class ListFavoriteAdapter(private val activity: Activity) : RecyclerView.Adapter
                                 intent.putExtra(EXTRA_NOTE, favorite)
                                 intent.putExtra(EXTRA_FAVORITE, favorite)
                                 context.startActivity(intent)
+                                (context as Activity).finish()
                             }
                         }
                     )

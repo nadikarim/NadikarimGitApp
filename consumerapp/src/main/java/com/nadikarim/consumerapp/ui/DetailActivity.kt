@@ -1,4 +1,4 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.consumerapp.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.nadikarim.consumerapp.R
 import com.nadikarim.consumerapp.data.model.Favorite
 import com.nadikarim.consumerapp.databinding.ActivityDetailBinding
 import com.nadikarim.consumerapp.utils.EXTRA_NOTE

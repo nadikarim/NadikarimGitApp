@@ -1,11 +1,13 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.consumerapp.ui
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import com.nadikarim.consumerapp.R
 import com.nadikarim.consumerapp.databinding.ActivityNotifSettingBinding
+import com.nadikarim.consumerapp.service.AlarmReceiver
 
 class NotifSettingActivity : AppCompatActivity() {
     private lateinit var alarmReceiver: AlarmReceiver

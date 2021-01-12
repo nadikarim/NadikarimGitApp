@@ -1,4 +1,4 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.consumerapp.ui
 
 import android.content.Intent
 import android.database.ContentObserver
@@ -12,6 +12,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nadikarim.consumerapp.R
+import com.nadikarim.consumerapp.data.MappingHelper
 import com.nadikarim.consumerapp.data.db.DatabaseContract.FavoriteColumns.Companion.CONTENT_URI
 import com.nadikarim.consumerapp.data.model.Favorite
 import com.nadikarim.consumerapp.databinding.ActivityMainBinding

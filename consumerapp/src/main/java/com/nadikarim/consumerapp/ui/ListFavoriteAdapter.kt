@@ -1,4 +1,4 @@
-package com.nadikarim.consumerapp
+package com.nadikarim.consumerapp.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.nadikarim.consumerapp.R
 import com.nadikarim.consumerapp.data.model.Favorite
 import com.nadikarim.consumerapp.databinding.ItemUserBinding
 import com.nadikarim.consumerapp.utils.CustomOnItemClickListener

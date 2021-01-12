@@ -1,4 +1,4 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.ui
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,8 +8,10 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.nadikarim.submission3.R
 import com.nadikarim.submission3.data.model.User
 import com.nadikarim.submission3.databinding.ItemUserBinding
+import com.nadikarim.submission3.utils.EXTRA_DATA
 import com.nadikarim.submission3.utils.EXTRA_FAVORITE
 import java.util.*
 import kotlin.collections.ArrayList
@@ -70,7 +72,7 @@ class UserAdapter(private var listUser: ArrayList<User>) : RecyclerView.Adapter<
                         user.isFav
                     )
                     val intent = Intent(context, DetailActivity::class.java)
-                    intent.putExtra(DetailActivity.EXTRA_DATA, user)
+                    intent.putExtra(EXTRA_DATA, user)
                     intent.putExtra(EXTRA_FAVORITE, user)
                     context.startActivity(intent)
                 }

@@ -1,17 +1,16 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.ui
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import com.nadikarim.submission3.data.db.DatabaseContract
-import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.CONTENT_URI
+import com.nadikarim.submission3.R
 import com.nadikarim.submission3.data.db.FavoriteHelper
 import com.nadikarim.submission3.data.model.Favorite
 import com.nadikarim.submission3.databinding.ActivityDetailFavoriteBinding
@@ -32,6 +31,7 @@ class DetailFavoriteActivity : AppCompatActivity(), View.OnClickListener {
 
         favoriteHelper = FavoriteHelper.getInstance(applicationContext)
         favoriteHelper.open()
+        favorite = intent.getParcelableExtra(EXTRA_NOTE)
 
         setDataObject()
         viewPagerConfig()
@@ -102,15 +102,16 @@ class DetailFavoriteActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_favorite -> {
                 if (isFavorite) {
-                    val uriId =Uri.parse(CONTENT_URI.toString() + "/" + favorite?.username)
-                    contentResolver.delete(uriId, null, null)
-                    /*
-                    Yang ini juga gak bisa
+                    //val uriId =Uri.parse(CONTENT_URI.toString() + "/" + favorite?.username)
+                    //contentResolver.delete(uriId, null, null)
+                        Log.d(DetailFavoriteActivity::class.java.simpleName, "onClick: $isFavorite, ${favorite?.username}")
                     favoriteHelper.deleteById(favorite?.username.toString())
-                     */
+
                     Toast.makeText(this, getString(R.string.delete_from_favorite), Toast.LENGTH_SHORT).show()
                     binding.btnFavorite.setImageResource(R.drawable.ic_baseline_favorite_unfilled_24)
                     isFavorite = false
+                    startActivity(Intent(this@DetailFavoriteActivity, FavoriteActivity::class.java))
+                    finish()
                 }
             }
         }

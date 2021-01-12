@@ -18,17 +18,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Submission3">
-        <activity android:name=".DetailFavoriteActivity"></activity>
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.DetailFavoriteActivity" />
 
         <receiver
-            android:name=".AlarmReceiver"
+            android:name=".service.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".NotifSettingActivity" />
-        <activity android:name=".FavoriteActivity" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.NotifSettingActivity" />
+        <activity android:name=".ui.FavoriteActivity" />
+        <activity android:name=".ui.DetailActivity" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

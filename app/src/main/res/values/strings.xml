@@ -19,4 +19,6 @@
     <string name="delete_from_favorite">Deleted from favorite</string>
     <string name="add_to_favorite">Added to favorite</string>
     <string name="empty_favorite">Your Favorite is empty</string>
+    <string name="reminder_off">Daily Reminder Is OFF</string>
+    <string name="reminder_on">Daily Reminder Is ON</string>
 </resources>

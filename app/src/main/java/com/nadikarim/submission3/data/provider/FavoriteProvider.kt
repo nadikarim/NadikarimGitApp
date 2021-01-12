@@ -6,10 +6,10 @@ import android.content.Context
 import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
-import com.nadikarim.submission3.data.db.DatabaseContract.AUTHORITY
 import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.CONTENT_URI
 import com.nadikarim.submission3.data.db.DatabaseContract.FavoriteColumns.Companion.TABLE_NAME
 import com.nadikarim.submission3.data.db.FavoriteHelper
+import com.nadikarim.submission3.utils.AUTHORITY
 
 class FavoriteProvider : ContentProvider() {
 
@@ -34,7 +34,7 @@ class FavoriteProvider : ContentProvider() {
     override fun query(uri: Uri, strings: Array<String>?, s: String?, strings1: Array<String>?, s1: String?): Cursor? {
         return when (sUriMatcher.match(uri)) {
             FAVORITE -> favoriteHelper.queryAll()
-            FAVORITE_ID -> favoriteHelper.queryById(uri.lastPathSegment.toString()) // get data by id
+            FAVORITE_ID -> favoriteHelper.queryById(uri.lastPathSegment.toString())
             else -> null
         }
     }

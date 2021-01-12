@@ -1,4 +1,4 @@
-package com.nadikarim.submission3
+package com.nadikarim.submission3.service
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
@@ -10,15 +10,15 @@ import android.content.Intent
 import android.os.Build
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import com.nadikarim.submission3.R
+import com.nadikarim.submission3.ui.MainActivity
+import com.nadikarim.submission3.utils.EXTRA_MESSAGE
+import com.nadikarim.submission3.utils.EXTRA_TYPE
 import java.util.*
 
 class AlarmReceiver : BroadcastReceiver() {
 
     companion object {
-        const val TYPE_DAILY = "Daily Reminder"
-        const val EXTRA_MESSAGE = "message"
-        const val EXTRA_TYPE = "type"
-
         private const val ID_DAILY = 100
         private const val TIME_DAILY = "09:00"
     }
@@ -28,25 +28,20 @@ class AlarmReceiver : BroadcastReceiver() {
         showAlarmNotification(context, message)
     }
 
-    fun setDailyReminder(context: Context, type: String, message: String) {
+    fun setDailyReminder(context: Context, type: String, msg: String) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, AlarmReceiver::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        intent.putExtra(EXTRA_MESSAGE, message)
+        intent.putExtra(EXTRA_MESSAGE, msg)
         intent.putExtra(EXTRA_TYPE, type)
         val timeArray = TIME_DAILY.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]))
         calendar.set(Calendar.MINUTE, Integer.parseInt(timeArray[1]))
         calendar.set(Calendar.SECOND, 0)
-        val pendingIntent = PendingIntent.getBroadcast(
-            context,
-            ID_DAILY,
-            intent,
-            PendingIntent.FLAG_ONE_SHOT
-        )
+        val pendingIntent = PendingIntent.getBroadcast(context, ID_DAILY, intent, PendingIntent.FLAG_ONE_SHOT)
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent)
-        Toast.makeText(context, "Daily Reminder Is ON", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.reminder_on), Toast.LENGTH_SHORT).show()
     }
 
     fun cancelAlarm(context: Context) {
@@ -56,27 +51,24 @@ class AlarmReceiver : BroadcastReceiver() {
         val pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0)
         pendingIntent.cancel()
         alarmManager.cancel(pendingIntent)
-        Toast.makeText(context, "Daily Reminder Is OFF", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.reminder_off), Toast.LENGTH_SHORT).show()
     }
 
-    private fun showAlarmNotification( context: Context, message: String?) {
+    private fun showAlarmNotification(context: Context, msg: String?) {
 
         val channelId = "userChannel"
         val channelName = "daily notification"
 
         val intent = Intent(context, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        val pendingIntent = PendingIntent.getActivity(
-            context, 0,
-            intent, PendingIntent.FLAG_ONE_SHOT
-        )
+        val pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
         val notificationManagerCompat =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val builder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_baseline_alarm_24)
             .setContentTitle("Daily Reminder")
-            .setContentText(message)
+            .setContentText(msg)
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
